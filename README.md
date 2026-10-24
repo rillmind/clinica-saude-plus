@@ -18,6 +18,11 @@ Aplicação React para cadastro de pacientes em uma campanha de prevenção à s
 
 - **Relógio digital** em `src/Relogio.jsx` — class component que atualiza a hora a cada 1 segundo com `setInterval`.
 
+## Por que existe
+
+É um trabalho da disciplina de Programação para Dispositivos Móveis (IFPE): praticar React com
+class components, state e formulário controlado. Os requisitos atendidos estão na tabela acima.
+
 ## Exemplos
 
 ![Formulário de cadastro](assets/Ex1.jpg)
@@ -59,3 +64,22 @@ A lógica de submissão com `preventDefault` e a exibição do alerta foi bem di
 Já o relógio digital do desafio extra foi interessante de implementar. Usei `setInterval` no `componentDidMount` para atualizar o state a cada segundo e limpei o timer no `componentWillUnmount` para evitar vazamento de memória. O `toLocaleTimeString('pt-BR')` já formata a hora no padrão brasileiro.
 
 No fim, deu pra aplicar tudo que vimos na matéria sem grandes surpresas.
+
+
+## Como testar
+
+Não há testes automatizados. Para conferir que o projeto compila e passa no linter:
+
+```bash
+npm install
+npm run build
+npm run lint
+```
+
+Para testar à mão, rode `npm start` e abra o endereço que o Vite mostrar
+(por padrão `http://localhost:5173`). Confira que:
+
+- o cabeçalho mostra o nome da clínica (passado por props);
+- o relógio no topo atualiza a cada segundo;
+- preencher nome, idade, cidade, sexo e tipo de atendimento e enviar abre um `alert` com todos os
+  dados; os selects começam numa opção vazia obrigatória.
